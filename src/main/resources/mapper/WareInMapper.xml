@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ UICSOFT 公司拥有本软件版权2021,并保留所有权利。
+  ~ Copyright 2021, UICSOFT Company Limited.
+  ~ All rights reserved.
+  ~
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frank.mapper.WareInMapper">
+
+
+    <resultMap id="wareInResultMap" type="com.frank.vo.WareInVo">
+        <result property="id" column="id"/>
+        <result property="wareInNo" column="ware_in_no"/>
+        <result property="wareInTime" column="ware_in_time"/>
+        <result property="wareInType" column="ware_in_type"/>
+        <result property="wareInStatus" column="ware_in_status"/>
+        <collection property="list" ofType="com.frank.entity.WareInDetail">
+            <result property="id" column="did"/>
+            <result property="wareInId" column="dind"/>
+            <result property="wareInNum" column="dnum"/>
+            <result property="prodId" column="dpord"/>
+        </collection>
+
+    </resultMap>
+
+
+
+    <select id="getOneById" resultType="com.frank.entity.WareIn">
+        select * from uic_ware_in where id = #{id}
+    </select>
+
+
+
+    <select id="getAll" resultType="com.frank.entity.WareIn">
+        select * from uic_ware_in
+    </select>
+    <select id="getInList" resultMap="wareInResultMap">
+        select
+            i.*,
+            d.id as did,
+            d.prod_id as dpord,
+            d.ware_in_id as dind,
+            d.ware_in_num as dnum
+        from uic_ware_in i
+            left join uic_ware_in_detail d on d.ware_in_id = i.id
+    </select>
+
+</mapper>
