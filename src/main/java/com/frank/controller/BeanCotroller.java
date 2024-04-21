@@ -84,6 +84,11 @@ public class BeanCotroller {
         return wareIn.toString();
     }
 
+    public String removeAll(WareInVo wareInVo) {
+        boolean b = wareInService.removeAll(wareInVo);
+        return "";
+    }
+
     public static void main(String[] args) {
         Animal animal = new Animal().setName("动物");
 //        Animal dog = new Dog().setMeta("肉").setName("狗");

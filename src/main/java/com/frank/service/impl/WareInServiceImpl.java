@@ -56,4 +56,17 @@ public class WareInServiceImpl extends ServiceImpl<WareInMapper, WareIn> impleme
         System.out.println(wareInVo.toString());
         return b && b1;
     }
+
+    /**
+     * 删除全部
+     *
+     * @param wareInVo
+     *
+     * @return
+     */
+    @Override
+    public boolean removeAll(WareInVo wareInVo) {
+        boolean rm = baseMapper.removeAll(wareInVo);
+        return rm;
+    }
 }

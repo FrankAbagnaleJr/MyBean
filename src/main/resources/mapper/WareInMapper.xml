@@ -25,6 +25,9 @@
 
     </resultMap>
 
+    <delete id="removeAll">
+
+    </delete>
 
 
     <select id="getOneById" resultType="com.frank.entity.WareIn">

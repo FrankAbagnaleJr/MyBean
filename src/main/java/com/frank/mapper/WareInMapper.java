@@ -34,4 +34,11 @@ public interface WareInMapper extends BaseMapper<WareIn> {
     List<WareIn> getAll();
 
     List<WareInVo> getInList();
+
+    /**
+     * 删除全部
+     * @param wareInVo
+     * @return
+     */
+    boolean removeAll(WareInVo wareInVo);
 }

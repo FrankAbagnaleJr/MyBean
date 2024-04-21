@@ -24,4 +24,11 @@ public interface WareInService extends IService<WareIn> {
      */
     boolean saveOrUpdateWareIn(WareInVo wareInVo);
 
+    /**
+     * 删除全部
+     * @param wareInVo
+     * @return
+     */
+    boolean removeAll(WareInVo wareInVo);
+
 }
