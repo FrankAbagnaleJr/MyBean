@@ -2,6 +2,8 @@ package com.frank.vo;
 
 import com.frank.entity.WareInDetail;
 import lombok.Data;
+import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.springframework.beans.BeanUtils;
 
 /**
@@ -12,6 +14,8 @@ import org.springframework.beans.BeanUtils;
  * @description TODO
  */
 @Data
+@ToString(callSuper = true)
+@Accessors(chain = true)
 public class WareInDetailVo extends WareInDetail {
     private String startDate;
     private String endtDate;

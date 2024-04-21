@@ -4,6 +4,10 @@ package com.frank.vo;
 import com.frank.entity.WareIn;
 import com.frank.entity.WareInDetail;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 
@@ -20,21 +24,11 @@ import java.util.Objects;
  * @description TODO
  */
 @Data
+@ToString(callSuper = true)
+@Accessors(chain = true)
 public class WareInVo extends WareIn {
 
     List<WareInDetailVo> list;
-    @Override
-    public String toString() {
-        //因为不能直接访问父类中的私有属性，的通过get和set方法访问
-        return "WareInVo{" +
-                "id=" + this.getId() +
-                ", wareInNo=" + this.getWareInNo() +
-                ", wareInTime=" + this.getWareInTime() +
-                ", wareInType=" + this.getWareInType() +
-                ", wareInStatus=" + this.getWareInStatus() +
-                ", list=" + list +
-                '}';
-    }
 
     public WareIn convert() {
         WareIn wareIn = new WareIn();

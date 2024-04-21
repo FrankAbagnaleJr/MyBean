@@ -23,4 +23,5 @@ public interface WareInService extends IService<WareIn> {
      * @return
      */
     boolean saveOrUpdateWareIn(WareInVo wareInVo);
+
 }

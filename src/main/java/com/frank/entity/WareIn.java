@@ -2,6 +2,7 @@ package com.frank.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @TableName("uic_ware_in")
+@Accessors(chain = true)
 public class WareIn {
     private Long id;
     private String wareInNo;

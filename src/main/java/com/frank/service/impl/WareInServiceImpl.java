@@ -53,6 +53,7 @@ public class WareInServiceImpl extends ServiceImpl<WareInMapper, WareIn> impleme
         List<WareInDetail> detailList = wareInVo.convertList(convert.getId());
         boolean b1 = wareInDetailService.saveOrUpdateBatch(detailList);
 
+        System.out.println(wareInVo.toString());
         return b && b1;
     }
 }

@@ -2,6 +2,7 @@ package com.frank.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * @Auther: uicsoft-frank
@@ -11,6 +12,7 @@ import lombok.Data;
  * @description TODO
  */
 @Data
+@Accessors(chain = true)
 @TableName("uic_ware_in_detail")
 public class WareInDetail {
     private Long id;
