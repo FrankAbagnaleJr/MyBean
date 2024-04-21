@@ -25,3 +25,7 @@
             Animal dog = new Dog().setMeta("肉").setName("狗");
             最后的setName是父类的方法，返回的是父类对象，所以要用Animal来接变量，但实际存储的还是Dog对象，可以强转Dog对象
             具体参照BeanCotroller类里面的main方法测试
+
+    3. 创建mapper方法，mapper.xml里面的sql，在实现类impl里面用baseMapper来调用
+        例如：Mapper里面创建了removeAll方法，xml也写了对应的sql
+            在serviceImpl里面可直接用baseMapper.removeAll()来调用，不用再注入dao层
