@@ -19,7 +19,7 @@
         实体类上面加@Accessors(fluent = true)注解
         例如：Student student = new Student().age(20).name("张三");
 
-        注意：调用父类的set方法后，返回的是父类(实体类)对象，要用父类对象接，实际对象还是vo类
+        注意：调用父类的set方法后，返回的是父类(实体类)对象，要用父类对象接，实际对象还是vo类。(必须先调用子类方法，再调用父类方法)
         例如：Dog类继承了Animal类
             Animal animal = new Animal().setName("动物");
             Animal dog = new Dog().setMeta("肉").setName("狗");
